@@ -1,0 +1,26 @@
+#Le code n'est pas fini  ----> si tu arrives à le terminer c'est cool
+
+
+#reverse_geocode(lat = 45.77624, long = 4.871634, method = 'osm',full_results = TRUE)
+#geocode( method = 'osm', lat = 45.77624 , long = 4.871634)
+########################################
+options(tidygeocoder.progress_bar = FALSE)
+adrs = reverse_geo(lat = 45.77624, long = 4.871634, method = "osm")[3]
+adrs =as.character(adrs)
+# prendre le 3 ème 
+strsplit(adrs, ",")
+ 
+# Division de la chaîne par la virgule
+split_adrs <- strsplit(adrs, ",")[[1]]
+
+# Récupération de la dixième valeur
+code_postal <- as.numeric(trimws(split_adrs[10]))
+
+# Création d'un nouveau data frame avec le code postal
+nouveau_point <- data.frame(position.lat = 45.77624, position.lng = 4.871634, code_postal = code_postal)
+
+# Ajout du nouveau point à data_list
+data_list <- rbind(data_list, nouveau_point)
+
+# Affichage du data_list mis à jour
+print(data_list)
