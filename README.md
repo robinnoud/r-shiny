@@ -1,3 +1,5 @@
-# il faut : 
-            - créer au mieux deux autre page avec des graphiques (pas besoin d'autres map)
-            - stocker le csv en ligne dans fresqldatabase donc modifier la recup des données (le plus proche possible du rendu)
+# apply rshiny en ligne X (récupération données freesqldatabase durée de vie faible)
+# script rshiny local avec csv V (modifier chemin csv avec '/')
+
+# script pour créer colonne région (codepostal) V (1 sec par colonne, raison pour laquelle
+# on doit stocker dans csv ou bdd sinon trop long (425 s)
